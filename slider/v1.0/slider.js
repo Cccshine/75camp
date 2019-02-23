@@ -5,7 +5,8 @@ class Slider{
         this.sliderItemsLen = this.sliderItems.length;
         this.cycle = cycle;
 
-        const controller = document.getElementById("controller-list");
+        const controller = this.container.querySelector("#controller-list");
+        //结构解耦（去掉相关html结构也不报错）
         if(controller){
             const controllerItems = controller.querySelectorAll(".controller-item");
             controller.addEventListener('mouseover', (event)=>{
@@ -29,7 +30,8 @@ class Slider{
             })
         }
 
-        const prev = document.getElementById("prev");
+        const prev = this.container.querySelector("#prev");
+        //结构解耦（去掉相关html结构也不报错）
         if(prev){
             prev.addEventListener('click',(event)=>{
                 this.stop();
@@ -39,7 +41,8 @@ class Slider{
             })
         }
 
-        const next = document.getElementById("next");
+        const next = this.container.querySelector("#next");
+        //结构解耦（去掉相关html结构也不报错）
         if(next){
             next.addEventListener('click',(event)=>{
                 this.stop();
